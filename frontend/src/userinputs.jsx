@@ -38,17 +38,17 @@
             const totalcash = Number(five)*5+Number(ten)*10+Number(twenty)*20+Number(fifty)*50+Number(hundred)*100+Number(fivehundred)*500+Number(thousand)*1000+Number(inr)*1.6+Number(purchaseone)+Number(purchasetwo)+Number(purchasethree)
             const LastTotal = props.data[lastIndex].total
             const totalSalesNot = totalcash - LastTotal
-
-            fetch("http://localhost:3001/users", {
-                method: "POST",
-                headers:{
-                    "Content-Type": "application/json"
-                },  
-                body: JSON.stringify({date,five,ten,twenty,fifty,hundred,fivehundred,thousand,inr,day,purchaseone,purchasetwo,purchasethree,totalSalesNot})
-
-            })
+        fetch("http://localhost:3001/users", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json"
+            },
+            body: JSON.stringify({date,five,ten,twenty,fifty,hundred,fivehundred,thousand,inr,day,purchaseone,purchasetwo,purchasethree,totalSalesNot})
+        })
             .then(res => res.json())
-            .then(data => console.log(date,five,ten,twenty,fifty,hundred,fivehundred,thousand,inr,day,purchaseone,purchasetwo,purchasethree,totalSalesNot));
+            .then(data => console.log("Server response:", data))
+            .then(data => console.log(date,five,ten,twenty,fifty,hundred,fivehundred,thousand,inr,day,purchaseone,purchasetwo,purchasethree,totalSalesNot))
+            .catch(err => console.error("Fetch failed:", err));
             
              
 

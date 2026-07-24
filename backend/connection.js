@@ -36,7 +36,7 @@ app.get("/users", (req,res) =>{
 
 
 
-const addqry = "insert into datas (`date`,`five`,`ten`,`twenty`,`fifty`,`hundred`,`fivehundred`,`thousand`,`inr`,`day`,`totalcash`,`purchaseone`,`purchasetwo`,`purchasethree`, `totalpurchase`,`total`,`totalSalesNot`,`pl`) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+const addqry = "insert into datas (`date`,`five`,`ten`,`twenty`,`fifty`,`hundred`,`fivehundred`,`thousand`,`inr`,`day`,`totalcash`,`purchaseone`,`purchasetwo`,`purchasethree`, `totalpurchase`,`total`,`sales`,`pl`) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 app.post("/users", (req, res) => {
   const { date,five,ten,twenty,fifty,hundred,fivehundred,thousand,inr,day,purchaseone,purchasetwo,purchasethree,totalSalesNot} = req.body;
